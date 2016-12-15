@@ -603,8 +603,10 @@
 # define USBMFGSTRING                   "The Autopilot"
 # define USB_FORCE_DISCONNECT			1
 /****************************************************************************
- * TARGET_HW_TAP_H520
+ * TARGET_HW_TAP_H520 / TYPHOON_H+
  ****************************************************************************/
+
+
 
 #elif  defined(TARGET_HW_TAP_H520)
 
@@ -617,7 +619,8 @@
 # define USBPRODUCTID                   0x0040
 # define BOOT_DELAY_ADDRESS             0x000001a0
 
-# define BOARD_TYPE                     64
+/* This BOARD_TYPE is base in /Firmware/Images/tap-v1.prototype  */
+# define BOARD_TYPE                     10
 # define BOARD_FLASH_SECTORS            11
 # define BOARD_FLASH_SIZE               (1024 * 1024)
 # define BOARD_FIRST_FLASH_SECTOR_TO_ERASE  2
