@@ -296,6 +296,7 @@ usb_cinit(void)
 	rcc_peripheral_enable_clock(&RCC_AHB1ENR, RCC_AHB1ENR_IOPAEN);
 	rcc_peripheral_enable_clock(&RCC_AHB2ENR, RCC_AHB2ENR_OTGFSEN);
 
+        /* "USB_FORCE_DISCONNECT" only used in TAP_V1 on account of USB pull-down resistance*/
 #if defined(USB_FORCE_DISCONNECT)
 	gpio_mode_setup(GPIOA, GPIO_MODE_OUTPUT, GPIO_OTYPE_OD, GPIO12);
 	gpio_set_output_options(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO12);

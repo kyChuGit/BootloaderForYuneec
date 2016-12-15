@@ -51,7 +51,8 @@ TARGETS	= \
 	px4fmuv5_bl \
 	px4io_bl \
 	px4iov3_bl \
-	tapv1_bl
+	tapv1_bl \
+	tapH520_bl
 
 all:	$(TARGETS)
 
@@ -109,6 +110,9 @@ px4iov3_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 
 tapv1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	make -f Makefile.f4 TARGET_HW=TAP_V1 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
+
+tapH520_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
+	make -f Makefile.f4 TARGET_HW=TAP_H520 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
 
 aerofcv1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	make -f Makefile.f4 TARGET_HW=AEROFC_V1 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@

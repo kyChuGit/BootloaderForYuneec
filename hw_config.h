@@ -602,6 +602,54 @@
 # undef  BOARD_POWER_PIN_RELEASE		/* Leave pin enabling Power - un comment to release (disable power)*/
 # define USBMFGSTRING                   "The Autopilot"
 # define USB_FORCE_DISCONNECT			1
+/****************************************************************************
+ * TARGET_HW_TAP_H520
+ ****************************************************************************/
+
+#elif  defined(TARGET_HW_TAP_H520)
+
+# define APP_LOAD_ADDRESS               0x0800C000
+# define BOOTLOADER_DELAY               5000
+# define BOARD_TAP
+# define INTERFACE_USB                  1
+# define INTERFACE_USART                1
+# define USBDEVICESTRING                "PX4 BL TAP v1.x"
+# define USBPRODUCTID                   0x0040
+# define BOOT_DELAY_ADDRESS             0x000001a0
+
+# define BOARD_TYPE                     64
+# define BOARD_FLASH_SECTORS            11
+# define BOARD_FLASH_SIZE               (1024 * 1024)
+# define BOARD_FIRST_FLASH_SECTOR_TO_ERASE  2
+# define APP_RESERVATION_SIZE			(2 * 16 * 1024) /* 2 16 Kib Sectors */
+# define OSC_FREQ                       16
+
+# define BOARD_USART  					USART2
+# define BOARD_USART_CLOCK_REGISTER 	RCC_APB1ENR
+# define BOARD_USART_CLOCK_BIT      	RCC_APB1ENR_USART2EN
+
+# define BOARD_PORT_USART   			GPIOA
+# define BOARD_PORT_USART_AF 			GPIO_AF7
+# define BOARD_PIN_TX     				GPIO2
+# define BOARD_PIN_RX		     		GPIO3
+# define BOARD_USART_PIN_CLOCK_REGISTER RCC_AHB1ENR
+# define BOARD_USART_PIN_CLOCK_BIT  	RCC_AHB1ENR_IOPAEN
+
+# define BOARD_PIN_LED_ACTIVITY         GPIO4
+# define BOARD_PIN_LED_BOOTLOADER       GPIO5
+# define BOARD_PORT_LEDS                GPIOC
+# define BOARD_CLOCK_LEDS               RCC_AHB1ENR_IOPCEN
+# define BOARD_LED_ON                   gpio_clear
+# define BOARD_LED_OFF                  gpio_set
+
+# define BOARD_POWER_PIN_OUT            GPIO4
+# define BOARD_POWER_PORT               GPIOA
+# define BOARD_POWER_CLOCK_REGISTER     RCC_AHB1ENR
+# define BOARD_POWER_CLOCK_BIT          RCC_AHB1ENR_IOPAEN
+# define BOARD_POWER_ON                 gpio_set
+# define BOARD_POWER_OFF                gpio_clear
+# undef  BOARD_POWER_PIN_RELEASE		/* Leave pin enabling Power - un comment to release (disable power)*/
+# define USBMFGSTRING                   "The Autopilot"
 
 /****************************************************************************
  * TARGET_HW_CRAZYFLIE
