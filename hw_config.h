@@ -602,21 +602,20 @@
 # undef  BOARD_POWER_PIN_RELEASE		/* Leave pin enabling Power - un comment to release (disable power)*/
 # define USBMFGSTRING                   "The Autopilot"
 # define USB_FORCE_DISCONNECT			1
+
 /****************************************************************************
- * TARGET_HW_TAP_H520 / TYPHOON_H+
+ * TARGET_HW_TAP_V2
  ****************************************************************************/
 
-
-
-#elif  defined(TARGET_HW_TAP_H520)
+#elif  defined(TARGET_HW_TAP_V2)
 
 # define APP_LOAD_ADDRESS               0x0800C000
 # define BOOTLOADER_DELAY               5000
 # define BOARD_TAP
 # define INTERFACE_USB                  1
 # define INTERFACE_USART                1
-# define USBDEVICESTRING                "PX4 BL TAP v1.x"
 # define USBPRODUCTID                   0x0040
+# define USBDEVICESTRING                "PX4 BL TAP v2.x"
 # define BOOT_DELAY_ADDRESS             0x000001a0
 
 /* This BOARD_TYPE is base in /Firmware/Images/tap-v1.prototype  */
