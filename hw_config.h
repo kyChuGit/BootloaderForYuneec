@@ -601,6 +601,7 @@
 # define BOARD_POWER_OFF                gpio_clear
 # undef  BOARD_POWER_PIN_RELEASE		/* Leave pin enabling Power - un comment to release (disable power)*/
 # define USBMFGSTRING                   "The Autopilot"
+/* "USB_FORCE_DISCONNECT" only used in TAP_V1 on account of USB pull-down resistance*/
 # define USB_FORCE_DISCONNECT			1
 
 /****************************************************************************
