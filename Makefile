@@ -52,7 +52,8 @@ TARGETS	= \
 	px4io_bl \
 	px4iov3_bl \
 	tapv1_bl \
-	tapv2_bl
+	tapv2_bl \
+	YC_Drone_bl
 
 all:	$(TARGETS)
 
@@ -113,6 +114,9 @@ tapv1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 
 tapv2_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	make -f Makefile.f4 TARGET_HW=TAP_V2 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
+
+YC_Drone_bl:$(MAKEFILE_LIST) $(LIBOPENCM3)
+	make -f Makefile.f7 TARGET_HW=YUNEEC_DRONE LINKER_FILE=stm32f7.ld TARGET_FILE_NAME=$@
 
 aerofcv1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	make -f Makefile.f4 TARGET_HW=AEROFC_V1 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
