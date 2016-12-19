@@ -53,7 +53,8 @@ TARGETS	= \
 	px4iov3_bl \
 	tapv1_bl \
 	tapv2_bl \
-	YC_Drone_bl
+	YC_Drone_bl \
+	TyphoonQTest_bl
 
 all:	$(TARGETS)
 
@@ -117,6 +118,9 @@ tapv2_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 
 YC_Drone_bl:$(MAKEFILE_LIST) $(LIBOPENCM3)
 	make -f Makefile.f7 TARGET_HW=YUNEEC_DRONE LINKER_FILE=stm32f7.ld TARGET_FILE_NAME=$@
+
+TyphoonQTest_bl:$(MAKEFILE_LIST) $(LIBOPENCM3)
+	make -f Makefile.f7 TARGET_HW=TyphoonQTest LINKER_FILE=stm32f7.ld TARGET_FILE_NAME=$@
 
 aerofcv1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	make -f Makefile.f4 TARGET_HW=AEROFC_V1 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
